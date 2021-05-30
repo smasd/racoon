@@ -22,10 +22,10 @@ def main():
 
     query_args = search_args.format(search_user, show_retweets, hide_replies, last_id)
 
-    twitter.set_query(query_args)
+    twitter.set_query_args(query_args)
 
     matched_tweets = []
-    for resp in twitter.query_api():
+    for resp in twitter.query():
         op = objectpath.Tree(resp)
         tags = op.execute('$.entities.hashtags')
         full_body = str(op.execute('$.full_text')).replace("&amp;", "&")
