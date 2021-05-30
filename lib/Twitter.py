@@ -14,13 +14,13 @@ class Twitter:
 
         self.base_url = config.get("base_url")
 
-        self.query = None
+        self.query_args = None
 
-    def set_query(self, query):
-        self.query = query
+    def set_query_args(self, query):
+        self.query_args = query
 
-    def query_api(self):
-        query = self.base_url + self.query
+    def query(self):
+        query = self.base_url + self.query_args
         oauth = OAuth1Session(self.consumer_key,
                               client_secret=self.consumer_secret,
                               resource_owner_key=self.access_token,
