@@ -20,7 +20,7 @@ class Twitter:
         self.query_args = query
 
     def query(self):
-        query = self.base_url + self.query_args
+        query_str = self.base_url + self.query_args
         oauth = OAuth1Session(self.consumer_key,
                               client_secret=self.consumer_secret,
                               resource_owner_key=self.access_token,
@@ -28,4 +28,4 @@ class Twitter:
 
         params = {}
 
-        return oauth.get(query, params=params).json()
+        return oauth.get(query_str, params=params).json()
