@@ -16,8 +16,8 @@ class Twitter:
 
         self.query_args = None
 
-    def set_query_args(self, query):
-        self.query_args = query
+    def set_query_args(self, query_arg):
+        self.query_args = query_arg
 
     def query(self):
         query_str = self.base_url + self.query_args
