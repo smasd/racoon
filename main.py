@@ -24,6 +24,7 @@ def main():
 
     twitter.set_query(query_args)
 
+    matched_tweets = []
     for resp in twitter.query_api():
         op = objectpath.Tree(resp)
         tags = op.execute('$.entities.hashtags')
@@ -39,7 +40,16 @@ def main():
         if include_re.search(full_body):
             tweet_id = op.execute('$.id')
             media_url = op.execute('$.entities.media[0].media_url')
-            created_at_ltz = created_at.replace(tzinfo=pytz.utc).astimezone(tzlocal.get_localzone()).strftime("%Y-%m-%d %H:%M")
+            created_at_ltz = created_at.replace(tzinfo=pytz.utc).astimezone(tzlocal.get_localzone()).strftime(
+                "%Y-%m-%d %H:%M")
+            data = {
+                "id": tweet_id,
+                "created_at": created_at_ltz,
+                "body": full_body,
+                "media_url": media_url
+            }
+            matched_tweets.append(data)
+    print(matched_tweets)
 
 
 if __name__ == "__main__":
