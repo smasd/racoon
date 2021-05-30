@@ -1,3 +1,4 @@
 venv*
-*.json
+twitter.json
+discord.json
 .idea*
