@@ -4,7 +4,7 @@ from pathlib import Path
 
 class Settings:
     def __init__(self, config):
-        self.config_file = Path('../' + config)
+        self.config_file = Path(config)
 
         with open(self.config_file, 'r') as conf:
             self.config = json.load(conf)

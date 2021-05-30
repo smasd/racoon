@@ -19,7 +19,7 @@ class Twitter:
     def set_query(self, query):
         self.query = query
 
-    def query(self):
+    def query_api(self):
         query = self.base_url + self.query
         oauth = OAuth1Session(self.consumer_key,
                               client_secret=self.consumer_secret,
