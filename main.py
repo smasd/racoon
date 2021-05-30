@@ -8,9 +8,9 @@ import objectpath
 config = s.Settings('config.json')
 twitter = t.Twitter()
 
-tag_re = re.compile(config.get("tag_re"))
-include_re = re.compile(config.get("filter_include_re"))
-exclude_re = re.compile(config.get("filter_exclude_re"))
+tag_re = re.compile(config.get("tag_re"), re.IGNORECASE)
+include_re = re.compile(config.get("filter_include_re"), re.IGNORECASE)
+exclude_re = re.compile(config.get("filter_exclude_re"), re.IGNORECASE)
 
 
 def main():
@@ -49,7 +49,6 @@ def main():
                 "media_url": media_url
             }
             matched_tweets.append(data)
-    print(matched_tweets)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
   "search_show_retweets": false,
   "search_hide_replies": true,
   "tag_re": "^(COVID19VicData|COVID19Vic)$",
-  "filter_include_re": "new case|no case|new local",
+  "filter_include_re": "new case|no case|no new",
   "filter_exclude_re": "",
   "last_id": 1
 }
