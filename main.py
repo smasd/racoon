@@ -49,6 +49,12 @@ def main():
                 "media_url": media_url
             }
             matched_tweets.append(data)
+    print(matched_tweets)
+
+    sorted_list = sorted(matched_tweets, key=lambda k: k['id'])
+    print(sorted_list)
+    for i in sorted_list:
+        print(i)
 
 
 if __name__ == "__main__":
