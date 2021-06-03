@@ -24,7 +24,7 @@ class Discord:
         @self.client.event
         async def on_ready():
             while True:
-                if not self.pause and not self.messages:
+                if not self.pause and self.messages:
                     for payload in self.messages:
                         message = payload["message"]
                         attachment = payload["attachment"]
@@ -59,3 +59,9 @@ class Discord:
 
     def save_messages(self):
         config.set("message_list", self.messages)
+
+    def get_queue_state(self):
+        if not self.pause_input:
+            return True
+        else:
+            return False

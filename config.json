@@ -1,10 +1,12 @@
 {
-  "search_args": "?user_id={0}&include_rts={1}&exclude_replies={2}&tweet_mode=extended&count=200&since_id={3}",
-  "search_user": 43064490,
-  "search_show_retweets": false,
-  "search_hide_replies": true,
-  "tag_re": "^(COVID19VicData|COVID19Vic)$",
-  "filter_include_re": "new case|no case|no new",
-  "filter_exclude_re": "",
-  "last_id": 1
+    "search_args": "?user_id={0}&include_rts={1}&exclude_replies={2}&tweet_mode=extended&count=200&since_id={3}",
+    "search_user": 43064490,
+    "search_show_retweets": false,
+    "search_hide_replies": true,
+    "tag_re": "^(COVID19VicData|COVID19Vic)$",
+    "filter_include_re": "new case|no case|no new",
+    "filter_exclude_re": "",
+    "last_id": 1400221258894266369,
+    "sleep_time": 600,
+    "queue": []
 }
