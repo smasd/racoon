@@ -2,3 +2,4 @@ venv*
 twitter.json
 discord.json
 .idea*
+*.jpg
